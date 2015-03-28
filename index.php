@@ -54,10 +54,16 @@ $data = isset($_POST['data']) ? $_POST['data'] : '';
 
 if ($data) {
 	$obj = unserialize($data);
-	echo '<div id="ajax-loader"><i class="fa fa-cog fa-spin fa-5x"></i></div>';
-	echo "<div id='tree-1' style='display: none;'>\n<ul>\n";
-	recurse_var("", $obj);
-	echo "<ul>\n</div>\n";
+	
+	if ($obj) {
+		echo '<div id="ajax-loader"><i class="fa fa-cog fa-spin fa-5x"></i></div>';
+		echo "<div id='tree-1' style='display: none;'>\n<ul>\n";
+		recurse_var("", $obj);
+		echo "<ul>\n</div>\n";
+	}
+	else {
+		echo '<div class="alert alert-danger"><strong>Error:</strong> The string could not be unserialized.</div>';
+	}
 }
 else {
 	echo '<div class="alert alert-danger"><strong>Warning:</strong> This app can be used to run arbitrary code. Do not install it on an unprotected, public server.</div>
@@ -68,7 +74,7 @@ else {
 		<p id="submit-container"><input class="btn btn-primary" type="submit" value="Let\'s Do This..."></p>
 		</form>
 		</div>
-		<h5>Example serialized code:</h5>
+		<h5 class="top-buffer">Example serialized code:</h5>
 		<pre>O:8:"stdClass":2:{s:4:"name";s:16:"This is a string";s:4:"data";a:2:{s:4:"size";i:50;s:5:"color";s:5:"green";}}</pre>
 	';
 }
