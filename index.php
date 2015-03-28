@@ -32,7 +32,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="./">PHP Object Browser</a>
+		  <a class="navbar-brand" href="./"><i class="fa fa-cube"></i> PHP Object Browser</a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav">
@@ -191,7 +191,7 @@ function full_url($s, $use_forwarded_host=false)
 
 	<footer class="footer">
 	  <div class="container">
-		<div class="text-muted">Created out of spite by <a href="http://verysimple.com/">Jason Hinkle</a></div>
+		<div class="text-muted">Created out of spite by <a href="http://verysimple.com/">Jason Hinkle</a> - <a href="credits.php">Credits</a></div>
 	  </div>
 	</footer>
 	
