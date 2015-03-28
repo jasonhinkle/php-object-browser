@@ -4,9 +4,9 @@ PHP Object Browser is a developer utility that allows you to inspect serialized 
 
 This tools should be used only on private or local servers, or the server should be configured to require authentication to access it. Do not leave this unattended on a public server. You have been warned!
 
-## Screenshot
+## Demo
 
-![Screenshot](https://raw.github.com/jasonhinkle/php-object-browser/master/assets/images/screenshot.png)
+![Screenshot](https://raw.github.com/jasonhinkle/php-object-browser/master/assets/images/screenshot.gif)
 
 ## License
 
