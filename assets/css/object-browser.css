@@ -20,7 +20,7 @@ body {
 }
 
 body > .container {
-  padding: 60px 15px 0;
+  padding: 65px 15px 0;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -38,4 +38,8 @@ body > .container {
 #ajax-loader {
 	text-align: center;
 	margin-top: 100px;
+}
+
+.top-buffer {
+	margin-top: 25px;
 }
