@@ -57,6 +57,7 @@
 	<div><i class="fa fa-thumbs-o-up"></i> CSS by <a href="http://getbootstrap.com">Bootstrap</a> (MIT License)</div>
 	<div><i class="fa fa-thumbs-o-up"></i> Font Icons by <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> (CC License)</div>
 	<div><i class="fa fa-thumbs-o-up"></i> Image Icons by <a href="http://www.flaticon.com/packs/font-awesome">flaticon.com</a> (CC License)</div>
+	<div><i class="fa fa-thumbs-o-up"></i> CDN Hosting by <a href="https://cdnjs.com/">cdnjs.com</a></div>
 	
 	<h3>License</h3>
 	<?php 
