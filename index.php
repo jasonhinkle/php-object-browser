@@ -36,6 +36,9 @@
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav">
+		  	<li class="active"><a href="./">Browser</a></li>
+		  	<li><a href="instructions.php">Instructions</a></li>
+		  	<li><a href="credits.php">Credits</a></li>
 		  </ul>
 		</div><!--/.nav-collapse -->
 	  </div>
@@ -43,6 +46,11 @@
 
 	<main class="container">
 <?php
+
+if (is_file('includes.php') && is_readable('includes.php')) {
+	require_once 'includes.php';
+	echo '<div class="alert alert-info"><i class="fa fa-info-circle"></i> Class definitions from includes.php loaded.</div>';
+}
 
 define('RECURSION_SANITY_LIMIT',25);
 define('BASE_URL', str_replace('index.php', '', full_url($_SERVER)));
@@ -66,16 +74,13 @@ if ($data) {
 	}
 }
 else {
-	echo '<div class="alert alert-danger"><strong>Warning:</strong> This app can be used to run arbitrary code. Do not install it on an unprotected, public server.</div>
-		<div id="form-container">
+	echo '<div id="form-container">
 		<form action="index.php" method="post">
-		<h5>PHP Object To Inspect:</h5>
+		<h3>PHP Object To Inspect:</h3>
 		<p id="data-container"><textarea class="form-control" name="data" id="data" placeholder="Copy/paste serialized PHP code here"></textarea></p>
 		<p id="submit-container"><input class="btn btn-primary" type="submit" value="Let\'s Do This..."></p>
 		</form>
 		</div>
-		<h5 class="top-buffer">Example serialized code:</h5>
-		<pre>O:8:"stdClass":2:{s:4:"name";s:16:"This is a string";s:4:"data";a:2:{s:4:"size";i:50;s:5:"color";s:5:"green";}}</pre>
 	';
 }
 
@@ -142,7 +147,7 @@ function recurse_var($varname, &$value, $path = '/', $level = 0)
 		
 		$methods = get_class_methods($value);
 		foreach ($methods as $method) {
-			echo "<li><strong>$method</strong> (Function)\n";
+			echo "<li data-jstree='{\"icon\":\"".BASE_URL."assets/images/function.png\"}'><strong>$method</strong> (Function)\n";
 		}
 		
 		echo "</ul></li>\n";
@@ -166,11 +171,16 @@ function recurse_var($varname, &$value, $path = '/', $level = 0)
 			echo "<li data-jstree='{\"icon\":\"".BASE_URL."assets/images/$icon\"}'><strong>$varname</strong> = " . (is_string($value) ? '"' . htmlentities($value) . '"' : $value) . "</li>\n";
 	}
 	
-	// if (!array_key_exists($cache_key,$PARSED_OBJS)) 
+	// if (!array_key_exists($cache_key,$PARSED_OBJS)) // this sometimes makes things even more weird
 	$PARSED_OBJS[$cache_key] = $path;
 
 }
 
+/**
+ * @param array $_SERVER
+ * @param bool $use_forwarded_host may need to be set to true if behind a load balancer
+ * @return string
+ */
 function url_origin($s, $use_forwarded_host=false)
 {
 	$ssl = (!empty($s['HTTPS']) && $s['HTTPS'] == 'on') ? true:false;
@@ -182,16 +192,27 @@ function url_origin($s, $use_forwarded_host=false)
 	$host = isset($host) ? $host : $s['SERVER_NAME'] . $port;
 	return $protocol . '://' . $host;
 }
+
+/**
+ * @param array $_SERVER
+ * @param bool $use_forwarded_host may need to be set to true if behind a load balancer
+ * @return string
+ */
 function full_url($s, $use_forwarded_host=false)
 {
 	return url_origin($s, $use_forwarded_host) . $s['REQUEST_URI'];
 }
+
 ?>
+
+	<p class="top-buffer text-danger"><strong><i class="fa fa-exclamation-triangle"></i> Warning:</strong> This utility may possibly be used to 
+	run untrusted code.  Do not leave it installed on an unprotected public server. 
+	<a href="http://php.net/manual/en/function.unserialize.php">More info...</a></p>
 	</main>
 
 	<footer class="footer">
 	  <div class="container">
-		<div class="text-muted">Created out of spite by <a href="http://verysimple.com/">Jason Hinkle</a> - <a href="credits.php">Credits</a></div>
+		<div class="text-muted">Created out of spite by <a href="http://verysimple.com/">Jason Hinkle</a></div>
 	  </div>
 	</footer>
 	

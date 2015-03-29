@@ -37,8 +37,8 @@
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav">
 		  	<li><a href="./">Browser</a></li>
-		  	<li><a href="instructions.php">Instructions</a></li>
-		  	<li class="active"><a href="credits.php">Credits</a></li>
+		  	<li class="active"><a href="instructions.php">Instructions</a></li>
+		  	<li><a href="credits.php">Credits</a></li>
 		  </ul>
 		</div><!--/.nav-collapse -->
 	  </div>
@@ -46,25 +46,22 @@
 
 	<main class="container">
 	
-	<h1>Credits</h1>
-	<p>Created by <a href="http://verysimple.com">Jason Hinkle</a></p>
+	<h1>Instructions</h1>
 	
+	<h3>Usage</h3>
+	<p>Copy any output from the PHP <code>serialize(...)</code> function.</p>
+	<p>Paste the serialized code into the object browser text area and submit the form.</p>
 	
-	<h3>Props To</h3>
-	<div><i class="fa fa-thumbs-o-up"></i> Treeview by <a href="http://www.jstree.com/">jsTree</a> (MIT License)</div>
-	<div><i class="fa fa-thumbs-o-up"></i> CSS by <a href="http://getbootstrap.com">Bootstrap</a> (MIT License)</div>
-	<div><i class="fa fa-thumbs-o-up"></i> Font Icons by <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> (CC License)</div>
-	<div><i class="fa fa-thumbs-o-up"></i> Image Icons by <a href="http://www.flaticon.com/packs/font-awesome">flaticon.com</a> (CC License)</div>
+	<h3>Class Definitions</h3>
+	<p>In order to view the methods/functions of a class, the class definitions must be included prior to unserialization,
+	otherwise PHP interprets it as a <code>__PHP_Incomplete_Class</code>. 
+	If you would like to see functions/methods in the browser tree view, you must create a file named <code>includes.php</code> in this directory.
+	Add all necessary <code>require_once(...)</code> statements to load your class definitions to this file.
+	The object browser will look for this file and include it prior to unserialization. </p>
 	
-	<h3>License</h3>
-	<?php 
-	
-	if (is_file('LICENSE') && is_readable('LICENSE')) {
-		$license = file_get_contents('LICENSE');
-		echo "<pre>$license</pre>";; 
-	}
-	
-	?>
+	<h3>Example serialized code:</h3>
+	<p>Copy/paste the example code below if you want to simply demo the object browser:</p>
+	<pre>O:8:"stdClass":2:{s:4:"name";s:16:"This is a string";s:4:"data";a:2:{s:4:"size";i:50;s:5:"color";s:5:"green";}}</pre>
 	
 	</main>
 
