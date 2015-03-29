@@ -52,6 +52,8 @@
 	<p>Copy any output from the PHP <code>serialize(...)</code> function.</p>
 	<p>Paste the serialized code into the object browser text area and submit the form.</p>
 	
+	<p><img src="assets/images/screenshot.gif"></p>
+	
 	<h3>Class Definitions</h3>
 	<p>In order to view the methods/functions of a class, the class definitions must be included prior to unserialization,
 	otherwise PHP interprets it as a <code>__PHP_Incomplete_Class</code>. 
