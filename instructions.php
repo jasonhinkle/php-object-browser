@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="assets/images/favicon.ico">
-	<title>PHP Object Browser - Credits</title>
+	<title>PHP Object Browser - Instructions</title>
 
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -23,6 +23,8 @@
   </head>
 
   <body>
+	<a href="https://github.com/jasonhinkle/php-object-browser"><img style="z-index: 9999; position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+    
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 	  <div class="container">
 		<div class="navbar-header">
@@ -63,8 +65,7 @@
 	
 	<h3>Example serialized code:</h3>
 	<p>Copy/paste the example code below if you want to simply demo the object browser:</p>
-	<pre>O:8:"stdClass":2:{s:4:"name";s:16:"This is a string";s:4:"data";a:2:{s:4:"size";i:50;s:5:"color";s:5:"green";}}</pre>
-	
+	<pre>O:8:"stdClass":2:{s:4:"name";s:16:"This is a string";s:4:"data";a:2:{s:4:"size";i:50;s:5:"color";s:5:"green";}}</pre>	
 	</main>
 
 	<footer class="footer">
